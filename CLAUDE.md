@@ -10,7 +10,7 @@
 - Support both Android and Desktop (Windows, macOS, Linux)
 
 ### Basic Information
-- **Package name**: `com.maxrave.simpmusic`
+- **Package name**: `com.tridermusic.app`
 - **Primary language**: Kotlin
 - **UI Framework**: Jetpack Compose / Compose Multiplatform
 - **Architecture**: Clean Architecture + MVVM
