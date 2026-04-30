@@ -415,8 +415,8 @@
     <string name="other_version">Other version</string>
     <string name="later">Later</string>
     <string name="give_a_star">Give a star</string>
-    <string name="enjoying_Trider Music">Enjoying Trider Music</string>
-    <string name="if_you_enjoy_using_Trider Music_star_Trider Music_on_github_or_leave_a_review_on">If you enjoy using Trider Music, star Trider Music on GitHub or leave a review on</string>
+    <string name="enjoying_simpmusic">Enjoying Trider Music</string>
+    <string name="if_you_enjoy_using_tridermusic_star_tridermusic_on_github_or_leave_a_review_on">If you enjoy using Trider Music, star Trider Music on GitHub or leave a review on</string>
     <string name="if_you_love_my_work_consider">"If you love my work, consider "</string>
     <string name="buying_me_a_coffee">buying me a coffee.</string>
     <string name="fade_audio_effect">Fade audio effect</string>
@@ -469,8 +469,8 @@
     <string name="contributor_name">Contributor name</string>
     <string name="contributor_email">Contributor email</string>
     <string name="anonymous">Anonymous</string>
-    <string name="Trider Music_lyrics">Trider Music Lyrics</string>
-    <string name="lyrics_provider_Trider Music">Lyrics provided by Trider Music Lyrics</string>
+    <string name="simpmusic_lyrics">Trider Music Lyrics</string>
+    <string name="lyrics_provider_simpmusic">Lyrics provided by Trider Music Lyrics</string>
     <string name="backup_in_progress">Backup in progress</string>
     <string name="restore_in_progress">Restore in progress</string>
     <string name="backup_downloaded">Backup downloaded data</string>
@@ -542,7 +542,6 @@
     <string name="quit_app">Quit app</string>
     <string name="local_tracking_title">Local tracking listening history</string>
     <string name="local_tracking_description">Log your listening history to local database</string>
-    <string name="Trider Music_charts">Trider Music Charts</string>
     <string name="crossfading">Crossfading</string>
     <string name="your_320kbps_url">Your 320kbps URL</string>
     <string name="search_for">Search for</string>

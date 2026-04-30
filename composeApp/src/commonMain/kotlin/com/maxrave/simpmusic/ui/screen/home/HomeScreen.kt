@@ -261,12 +261,7 @@ fun HomeScreen(
         }
     }
 
-    var showReviewDialog by rememberSaveable {
-        mutableStateOf(false)
-    }
-    var showRequestShareLyricsPermissions by rememberSaveable {
-        mutableStateOf(false)
-    }
+
 
     var topAppBarHeightPx by rememberSaveable {
         mutableIntStateOf(0)
@@ -317,17 +312,7 @@ fun HomeScreen(
     LaunchedEffect(key1 = homeData) {
         accountShow = homeData.find { it.subtitle == accountInfo?.first } == null
     }
-    LaunchedEffect(openAppTime, shareLyricsPermissions) {
-        Logger.w("HomeScreen", "openAppTime: $openAppTime, shareLyricsPermissions: $shareLyricsPermissions")
-        if (openAppTime >= 10 && openAppTime % 10 == 0 && openAppTime <= 50) {
-            showReviewDialog = true
-        } else if ((openAppTime == 1 || openAppTime % 15 == 0) && openAppTime <= 60 && !shareLyricsPermissions) {
-            showRequestShareLyricsPermissions = true
-        } else {
-            showReviewDialog = false
-            showRequestShareLyricsPermissions = false
-        }
-    }
+
 
     val shouldStartPaginate =
         remember {
@@ -361,38 +346,9 @@ fun HomeScreen(
 //        )
 //    }
 
-    if (showReviewDialog) {
-        ReviewDialog(
-            onDismissRequest = {
-                sharedViewModel.onDoneReview(
-                    isDismissOnly = true,
-                )
-                showReviewDialog = false
-            },
-            onDoneReview = {
-                sharedViewModel.onDoneReview(
-                    isDismissOnly = false,
-                )
-                showReviewDialog = false
-            },
-        )
-    }
 
-    if (showRequestShareLyricsPermissions) {
-        ShareSavedLyricsDialog(
-            onDismissRequest = {
-                showRequestShareLyricsPermissions = false
-                sharedViewModel.onDoneReview(
-                    isDismissOnly = true,
-                )
-            },
-            onConfirm = { contributor ->
-                sharedViewModel.onDoneRequestingShareLyrics(
-                    contributor,
-                )
-            },
-        )
-    }
+
+
 
     if (shouldShowLogInAlert) {
         var doNotShowAgain by rememberSaveable {

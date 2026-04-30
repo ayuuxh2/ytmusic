@@ -260,7 +260,7 @@ import tridermusic.composeapp.generated.resources.lrclib
 import tridermusic.composeapp.generated.resources.lyrics
 import tridermusic.composeapp.generated.resources.main_lyrics_provider
 import tridermusic.composeapp.generated.resources.manage_your_youtube_accounts
-import tridermusic.composeapp.generated.resources.maxrave_dev
+
 import tridermusic.composeapp.generated.resources.monthly
 import tridermusic.composeapp.generated.resources.never
 import tridermusic.composeapp.generated.resources.no_account
@@ -1976,7 +1976,7 @@ fun SettingScreen(
                         if (updateChannel == DataStoreManager.FDROID) {
                             "F-Droid"
                         } else {
-                            "SimpMusic GitHub Release"
+                            "Trider Music GitHub Release"
                         },
                     onClick = {
                         viewModel.setAlertData(
@@ -1987,7 +1987,7 @@ fun SettingScreen(
                                         listSelect =
                                             listOf(
                                                 (updateChannel == DataStoreManager.FDROID) to "F-Droid",
-                                                (updateChannel == DataStoreManager.GITHUB) to "SimpMusic GitHub Release",
+                                                (updateChannel == DataStoreManager.GITHUB) to "Trider Music GitHub Release",
                                             ),
                                     ),
                                 confirm =
@@ -1995,7 +1995,7 @@ fun SettingScreen(
                                         viewModel.setUpdateChannel(
                                             when (state.selectOne?.getSelected()) {
                                                 "F-Droid" -> DataStoreManager.FDROID
-                                                "SimpMusic GitHub Release" -> DataStoreManager.GITHUB
+                                                "Trider Music GitHub Release" -> DataStoreManager.GITHUB
                                                 else -> DataStoreManager.GITHUB
                                             },
                                         )
@@ -2014,9 +2014,9 @@ fun SettingScreen(
                 )
                 SettingItem(
                     title = stringResource(Res.string.author),
-                    subtitle = stringResource(Res.string.maxrave_dev),
+                    subtitle = "Trider",
                     onClick = {
-                        uriHandler.openUri("https://github.com/maxrave-dev")
+                        uriHandler.openUri("https://github.com/trider")
                     },
                 )
 
