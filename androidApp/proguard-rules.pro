@@ -218,8 +218,3 @@
 
 -keep class * extends androidx.room.RoomDatabase { <init>(); }
 
--dontwarn io.sentry.android.core.SentryLogcatAdapter
--dontwarn io.sentry.instrumentation.file.SentryFileInputStream$Factory
--dontwarn io.sentry.instrumentation.file.SentryFileOutputStream$Factory
--dontwarn io.sentry.okhttp.SentryOkHttpEventListener
--dontwarn io.sentry.okhttp.SentryOkHttpInterceptor

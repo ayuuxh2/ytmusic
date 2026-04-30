@@ -116,7 +116,7 @@ import com.maxrave.simpmusic.ui.component.EndOfPage
 import com.maxrave.simpmusic.ui.component.RippleIconButton
 import com.maxrave.simpmusic.ui.component.SettingItem
 import com.maxrave.simpmusic.ui.navigation.destination.home.CreditDestination
-import com.maxrave.simpmusic.ui.navigation.destination.login.DiscordLoginDestination
+
 import com.maxrave.simpmusic.ui.navigation.destination.login.LoginDestination
 import com.maxrave.simpmusic.ui.navigation.destination.login.SpotifyLoginDestination
 import com.maxrave.simpmusic.ui.theme.DarkColors
@@ -157,187 +157,187 @@ import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.about_us
-import simpmusic.composeapp.generated.resources.add_an_account
-import simpmusic.composeapp.generated.resources.ai
-import simpmusic.composeapp.generated.resources.ai_api_key
-import simpmusic.composeapp.generated.resources.ai_provider
-import simpmusic.composeapp.generated.resources.anonymous
-import simpmusic.composeapp.generated.resources.app_name
-import simpmusic.composeapp.generated.resources.audio
-import simpmusic.composeapp.generated.resources.author
-import simpmusic.composeapp.generated.resources.auto_backup
-import simpmusic.composeapp.generated.resources.auto_backup_description
-import simpmusic.composeapp.generated.resources.auto_check_for_update
-import simpmusic.composeapp.generated.resources.auto_check_for_update_description
-import simpmusic.composeapp.generated.resources.backup
-import simpmusic.composeapp.generated.resources.backup_downloaded
-import simpmusic.composeapp.generated.resources.backup_downloaded_description
-import simpmusic.composeapp.generated.resources.backup_frequency
-import simpmusic.composeapp.generated.resources.balance_media_loudness
-import simpmusic.composeapp.generated.resources.baseline_arrow_back_ios_new_24
-import simpmusic.composeapp.generated.resources.baseline_close_24
-import simpmusic.composeapp.generated.resources.baseline_people_alt_24
-import simpmusic.composeapp.generated.resources.baseline_playlist_add_24
-import simpmusic.composeapp.generated.resources.better_lyrics
-import simpmusic.composeapp.generated.resources.blur_fullscreen_lyrics
-import simpmusic.composeapp.generated.resources.blur_fullscreen_lyrics_description
-import simpmusic.composeapp.generated.resources.blur_player_background
-import simpmusic.composeapp.generated.resources.blur_player_background_description
-import simpmusic.composeapp.generated.resources.buy_me_a_coffee
-import simpmusic.composeapp.generated.resources.cancel
-import simpmusic.composeapp.generated.resources.canvas_info
-import simpmusic.composeapp.generated.resources.categories_sponsor_block
-import simpmusic.composeapp.generated.resources.change
-import simpmusic.composeapp.generated.resources.change_language_warning
-import simpmusic.composeapp.generated.resources.check_for_update
-import simpmusic.composeapp.generated.resources.checking
-import simpmusic.composeapp.generated.resources.clear
-import simpmusic.composeapp.generated.resources.clear_canvas_cache
-import simpmusic.composeapp.generated.resources.clear_downloaded_cache
-import simpmusic.composeapp.generated.resources.clear_player_cache
-import simpmusic.composeapp.generated.resources.clear_thumbnail_cache
-import simpmusic.composeapp.generated.resources.content
-import simpmusic.composeapp.generated.resources.content_country
-import simpmusic.composeapp.generated.resources.contributor_email
-import simpmusic.composeapp.generated.resources.contributor_name
-import simpmusic.composeapp.generated.resources.crossfade
-import simpmusic.composeapp.generated.resources.crossfade_auto
-import simpmusic.composeapp.generated.resources.crossfade_description
-import simpmusic.composeapp.generated.resources.crossfade_dj_mode
-import simpmusic.composeapp.generated.resources.crossfade_dj_mode_description
-import simpmusic.composeapp.generated.resources.crossfade_duration
-import simpmusic.composeapp.generated.resources.custom_ai_model_id
-import simpmusic.composeapp.generated.resources.custom_model_id_messages
-import simpmusic.composeapp.generated.resources.daily
-import simpmusic.composeapp.generated.resources.database
-import simpmusic.composeapp.generated.resources.default_models
-import simpmusic.composeapp.generated.resources.description_and_licenses
-import simpmusic.composeapp.generated.resources.discord_integration
-import simpmusic.composeapp.generated.resources.donation
-import simpmusic.composeapp.generated.resources.download_quality
-import simpmusic.composeapp.generated.resources.downloaded_cache
-import simpmusic.composeapp.generated.resources.enable_canvas
-import simpmusic.composeapp.generated.resources.enable_liquid_glass_effect
-import simpmusic.composeapp.generated.resources.enable_liquid_glass_effect_description
-import simpmusic.composeapp.generated.resources.enable_rich_presence
-import simpmusic.composeapp.generated.resources.enable_sponsor_block
-import simpmusic.composeapp.generated.resources.enable_spotify_lyrics
-import simpmusic.composeapp.generated.resources.free_space
-import simpmusic.composeapp.generated.resources.gemini
-import simpmusic.composeapp.generated.resources.guest
-import simpmusic.composeapp.generated.resources.help_build_lyrics_database
-import simpmusic.composeapp.generated.resources.help_build_lyrics_database_description
-import simpmusic.composeapp.generated.resources.http
-import simpmusic.composeapp.generated.resources.intro_login_to_discord
-import simpmusic.composeapp.generated.resources.intro_login_to_spotify
-import simpmusic.composeapp.generated.resources.invalid
-import simpmusic.composeapp.generated.resources.invalid_api_key
-import simpmusic.composeapp.generated.resources.invalid_host
-import simpmusic.composeapp.generated.resources.invalid_language_code
-import simpmusic.composeapp.generated.resources.invalid_port
-import simpmusic.composeapp.generated.resources.keep_backups
-import simpmusic.composeapp.generated.resources.keep_backups_format
-import simpmusic.composeapp.generated.resources.keep_service_alive
-import simpmusic.composeapp.generated.resources.keep_service_alive_description
-import simpmusic.composeapp.generated.resources.keep_your_youtube_playlist_offline
-import simpmusic.composeapp.generated.resources.keep_your_youtube_playlist_offline_description
-import simpmusic.composeapp.generated.resources.kill_service_on_exit
-import simpmusic.composeapp.generated.resources.kill_service_on_exit_description
-import simpmusic.composeapp.generated.resources.language
-import simpmusic.composeapp.generated.resources.last_backup
-import simpmusic.composeapp.generated.resources.last_checked_at
-import simpmusic.composeapp.generated.resources.limit_player_cache
-import simpmusic.composeapp.generated.resources.local_tracking_description
-import simpmusic.composeapp.generated.resources.local_tracking_title
-import simpmusic.composeapp.generated.resources.log_in_to_discord
-import simpmusic.composeapp.generated.resources.log_in_to_spotify
-import simpmusic.composeapp.generated.resources.log_out
-import simpmusic.composeapp.generated.resources.log_out_warning
-import simpmusic.composeapp.generated.resources.logged_in
-import simpmusic.composeapp.generated.resources.lrclib
-import simpmusic.composeapp.generated.resources.lyrics
-import simpmusic.composeapp.generated.resources.main_lyrics_provider
-import simpmusic.composeapp.generated.resources.manage_your_youtube_accounts
-import simpmusic.composeapp.generated.resources.maxrave_dev
-import simpmusic.composeapp.generated.resources.monthly
-import simpmusic.composeapp.generated.resources.never
-import simpmusic.composeapp.generated.resources.no_account
-import simpmusic.composeapp.generated.resources.normalize_volume
-import simpmusic.composeapp.generated.resources.open_system_equalizer
-import simpmusic.composeapp.generated.resources.openai
-import simpmusic.composeapp.generated.resources.openai_api_compatible
-import simpmusic.composeapp.generated.resources.other_app
-import simpmusic.composeapp.generated.resources.play_explicit_content
-import simpmusic.composeapp.generated.resources.play_explicit_content_description
-import simpmusic.composeapp.generated.resources.play_video_for_video_track_instead_of_audio_only
-import simpmusic.composeapp.generated.resources.playback
-import simpmusic.composeapp.generated.resources.player_cache
-import simpmusic.composeapp.generated.resources.prefer_320kbps_stream
-import simpmusic.composeapp.generated.resources.prefer_320kbps_stream_description
-import simpmusic.composeapp.generated.resources.proxy
-import simpmusic.composeapp.generated.resources.proxy_description
-import simpmusic.composeapp.generated.resources.proxy_host
-import simpmusic.composeapp.generated.resources.proxy_host_message
-import simpmusic.composeapp.generated.resources.proxy_password
-import simpmusic.composeapp.generated.resources.proxy_password_message
-import simpmusic.composeapp.generated.resources.proxy_port
-import simpmusic.composeapp.generated.resources.proxy_port_message
-import simpmusic.composeapp.generated.resources.proxy_type
-import simpmusic.composeapp.generated.resources.proxy_username
-import simpmusic.composeapp.generated.resources.proxy_username_message
-import simpmusic.composeapp.generated.resources.quality
-import simpmusic.composeapp.generated.resources.restore_your_data
-import simpmusic.composeapp.generated.resources.restore_your_saved_data
-import simpmusic.composeapp.generated.resources.rich_presence_info
-import simpmusic.composeapp.generated.resources.save
-import simpmusic.composeapp.generated.resources.save_all_your_playlist_data
-import simpmusic.composeapp.generated.resources.save_last_played
-import simpmusic.composeapp.generated.resources.save_last_played_track_and_queue
-import simpmusic.composeapp.generated.resources.save_playback_state
-import simpmusic.composeapp.generated.resources.save_shuffle_and_repeat_mode
-import simpmusic.composeapp.generated.resources.send_back_listening_data_to_google
-import simpmusic.composeapp.generated.resources.set
-import simpmusic.composeapp.generated.resources.settings
-import simpmusic.composeapp.generated.resources.signed_in
-import simpmusic.composeapp.generated.resources.simpmusic_lyrics
-import simpmusic.composeapp.generated.resources.skip_no_music_part
-import simpmusic.composeapp.generated.resources.skip_silent
-import simpmusic.composeapp.generated.resources.skip_sponsor_part_of_video
-import simpmusic.composeapp.generated.resources.socks
-import simpmusic.composeapp.generated.resources.sponsorBlock
-import simpmusic.composeapp.generated.resources.sponsor_block_intro
-import simpmusic.composeapp.generated.resources.spotify
-import simpmusic.composeapp.generated.resources.spotify_canvas_cache
-import simpmusic.composeapp.generated.resources.spotify_lyrícs_info
-import simpmusic.composeapp.generated.resources.storage
-import simpmusic.composeapp.generated.resources.such_as_music_video_lyrics_video_podcasts_and_more
-import simpmusic.composeapp.generated.resources.third_party_libraries
-import simpmusic.composeapp.generated.resources.thumbnail_cache
-import simpmusic.composeapp.generated.resources.translation_language
-import simpmusic.composeapp.generated.resources.translation_language_message
-import simpmusic.composeapp.generated.resources.translucent_bottom_navigation_bar
-import simpmusic.composeapp.generated.resources.unknown
-import simpmusic.composeapp.generated.resources.update_channel
-import simpmusic.composeapp.generated.resources.upload_your_listening_history_to_youtube_music_server_it_will_make_yt_music_recommendation_system_better_working_only_if_logged_in
-import simpmusic.composeapp.generated.resources.use_ai_translation
-import simpmusic.composeapp.generated.resources.use_ai_translation_description
-import simpmusic.composeapp.generated.resources.use_your_system_equalizer
-import simpmusic.composeapp.generated.resources.user_interface
-import simpmusic.composeapp.generated.resources.version
-import simpmusic.composeapp.generated.resources.version_format
-import simpmusic.composeapp.generated.resources.video_download_quality
-import simpmusic.composeapp.generated.resources.video_quality
-import simpmusic.composeapp.generated.resources.warning
-import simpmusic.composeapp.generated.resources.weekly
-import simpmusic.composeapp.generated.resources.what_segments_will_be_skipped
-import simpmusic.composeapp.generated.resources.you_can_see_the_content_below_the_bottom_bar
-import simpmusic.composeapp.generated.resources.your_320kbps_url
-import simpmusic.composeapp.generated.resources.youtube_account
-import simpmusic.composeapp.generated.resources.youtube_subtitle_language
-import simpmusic.composeapp.generated.resources.youtube_subtitle_language_message
-import simpmusic.composeapp.generated.resources.youtube_transcript
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.about_us
+import tridermusic.composeapp.generated.resources.add_an_account
+import tridermusic.composeapp.generated.resources.ai
+import tridermusic.composeapp.generated.resources.ai_api_key
+import tridermusic.composeapp.generated.resources.ai_provider
+import tridermusic.composeapp.generated.resources.anonymous
+import tridermusic.composeapp.generated.resources.app_name
+import tridermusic.composeapp.generated.resources.audio
+import tridermusic.composeapp.generated.resources.author
+import tridermusic.composeapp.generated.resources.auto_backup
+import tridermusic.composeapp.generated.resources.auto_backup_description
+import tridermusic.composeapp.generated.resources.auto_check_for_update
+import tridermusic.composeapp.generated.resources.auto_check_for_update_description
+import tridermusic.composeapp.generated.resources.backup
+import tridermusic.composeapp.generated.resources.backup_downloaded
+import tridermusic.composeapp.generated.resources.backup_downloaded_description
+import tridermusic.composeapp.generated.resources.backup_frequency
+import tridermusic.composeapp.generated.resources.balance_media_loudness
+import tridermusic.composeapp.generated.resources.baseline_arrow_back_ios_new_24
+import tridermusic.composeapp.generated.resources.baseline_close_24
+import tridermusic.composeapp.generated.resources.baseline_people_alt_24
+import tridermusic.composeapp.generated.resources.baseline_playlist_add_24
+import tridermusic.composeapp.generated.resources.better_lyrics
+import tridermusic.composeapp.generated.resources.blur_fullscreen_lyrics
+import tridermusic.composeapp.generated.resources.blur_fullscreen_lyrics_description
+import tridermusic.composeapp.generated.resources.blur_player_background
+import tridermusic.composeapp.generated.resources.blur_player_background_description
+import tridermusic.composeapp.generated.resources.buy_me_a_coffee
+import tridermusic.composeapp.generated.resources.cancel
+import tridermusic.composeapp.generated.resources.canvas_info
+import tridermusic.composeapp.generated.resources.categories_sponsor_block
+import tridermusic.composeapp.generated.resources.change
+import tridermusic.composeapp.generated.resources.change_language_warning
+import tridermusic.composeapp.generated.resources.check_for_update
+import tridermusic.composeapp.generated.resources.checking
+import tridermusic.composeapp.generated.resources.clear
+import tridermusic.composeapp.generated.resources.clear_canvas_cache
+import tridermusic.composeapp.generated.resources.clear_downloaded_cache
+import tridermusic.composeapp.generated.resources.clear_player_cache
+import tridermusic.composeapp.generated.resources.clear_thumbnail_cache
+import tridermusic.composeapp.generated.resources.content
+import tridermusic.composeapp.generated.resources.content_country
+import tridermusic.composeapp.generated.resources.contributor_email
+import tridermusic.composeapp.generated.resources.contributor_name
+import tridermusic.composeapp.generated.resources.crossfade
+import tridermusic.composeapp.generated.resources.crossfade_auto
+import tridermusic.composeapp.generated.resources.crossfade_description
+import tridermusic.composeapp.generated.resources.crossfade_dj_mode
+import tridermusic.composeapp.generated.resources.crossfade_dj_mode_description
+import tridermusic.composeapp.generated.resources.crossfade_duration
+import tridermusic.composeapp.generated.resources.custom_ai_model_id
+import tridermusic.composeapp.generated.resources.custom_model_id_messages
+import tridermusic.composeapp.generated.resources.daily
+import tridermusic.composeapp.generated.resources.database
+import tridermusic.composeapp.generated.resources.default_models
+import tridermusic.composeapp.generated.resources.description_and_licenses
+
+import tridermusic.composeapp.generated.resources.donation
+import tridermusic.composeapp.generated.resources.download_quality
+import tridermusic.composeapp.generated.resources.downloaded_cache
+import tridermusic.composeapp.generated.resources.enable_canvas
+import tridermusic.composeapp.generated.resources.enable_liquid_glass_effect
+import tridermusic.composeapp.generated.resources.enable_liquid_glass_effect_description
+import tridermusic.composeapp.generated.resources.enable_rich_presence
+import tridermusic.composeapp.generated.resources.enable_sponsor_block
+import tridermusic.composeapp.generated.resources.enable_spotify_lyrics
+import tridermusic.composeapp.generated.resources.free_space
+import tridermusic.composeapp.generated.resources.gemini
+import tridermusic.composeapp.generated.resources.guest
+import tridermusic.composeapp.generated.resources.help_build_lyrics_database
+import tridermusic.composeapp.generated.resources.help_build_lyrics_database_description
+import tridermusic.composeapp.generated.resources.http
+
+import tridermusic.composeapp.generated.resources.intro_login_to_spotify
+import tridermusic.composeapp.generated.resources.invalid
+import tridermusic.composeapp.generated.resources.invalid_api_key
+import tridermusic.composeapp.generated.resources.invalid_host
+import tridermusic.composeapp.generated.resources.invalid_language_code
+import tridermusic.composeapp.generated.resources.invalid_port
+import tridermusic.composeapp.generated.resources.keep_backups
+import tridermusic.composeapp.generated.resources.keep_backups_format
+import tridermusic.composeapp.generated.resources.keep_service_alive
+import tridermusic.composeapp.generated.resources.keep_service_alive_description
+import tridermusic.composeapp.generated.resources.keep_your_youtube_playlist_offline
+import tridermusic.composeapp.generated.resources.keep_your_youtube_playlist_offline_description
+import tridermusic.composeapp.generated.resources.kill_service_on_exit
+import tridermusic.composeapp.generated.resources.kill_service_on_exit_description
+import tridermusic.composeapp.generated.resources.language
+import tridermusic.composeapp.generated.resources.last_backup
+import tridermusic.composeapp.generated.resources.last_checked_at
+import tridermusic.composeapp.generated.resources.limit_player_cache
+import tridermusic.composeapp.generated.resources.local_tracking_description
+import tridermusic.composeapp.generated.resources.local_tracking_title
+
+import tridermusic.composeapp.generated.resources.log_in_to_spotify
+import tridermusic.composeapp.generated.resources.log_out
+import tridermusic.composeapp.generated.resources.log_out_warning
+import tridermusic.composeapp.generated.resources.logged_in
+import tridermusic.composeapp.generated.resources.lrclib
+import tridermusic.composeapp.generated.resources.lyrics
+import tridermusic.composeapp.generated.resources.main_lyrics_provider
+import tridermusic.composeapp.generated.resources.manage_your_youtube_accounts
+import tridermusic.composeapp.generated.resources.maxrave_dev
+import tridermusic.composeapp.generated.resources.monthly
+import tridermusic.composeapp.generated.resources.never
+import tridermusic.composeapp.generated.resources.no_account
+import tridermusic.composeapp.generated.resources.normalize_volume
+import tridermusic.composeapp.generated.resources.open_system_equalizer
+import tridermusic.composeapp.generated.resources.openai
+import tridermusic.composeapp.generated.resources.openai_api_compatible
+import tridermusic.composeapp.generated.resources.other_app
+import tridermusic.composeapp.generated.resources.play_explicit_content
+import tridermusic.composeapp.generated.resources.play_explicit_content_description
+import tridermusic.composeapp.generated.resources.play_video_for_video_track_instead_of_audio_only
+import tridermusic.composeapp.generated.resources.playback
+import tridermusic.composeapp.generated.resources.player_cache
+import tridermusic.composeapp.generated.resources.prefer_320kbps_stream
+import tridermusic.composeapp.generated.resources.prefer_320kbps_stream_description
+import tridermusic.composeapp.generated.resources.proxy
+import tridermusic.composeapp.generated.resources.proxy_description
+import tridermusic.composeapp.generated.resources.proxy_host
+import tridermusic.composeapp.generated.resources.proxy_host_message
+import tridermusic.composeapp.generated.resources.proxy_password
+import tridermusic.composeapp.generated.resources.proxy_password_message
+import tridermusic.composeapp.generated.resources.proxy_port
+import tridermusic.composeapp.generated.resources.proxy_port_message
+import tridermusic.composeapp.generated.resources.proxy_type
+import tridermusic.composeapp.generated.resources.proxy_username
+import tridermusic.composeapp.generated.resources.proxy_username_message
+import tridermusic.composeapp.generated.resources.quality
+import tridermusic.composeapp.generated.resources.restore_your_data
+import tridermusic.composeapp.generated.resources.restore_your_saved_data
+import tridermusic.composeapp.generated.resources.rich_presence_info
+import tridermusic.composeapp.generated.resources.save
+import tridermusic.composeapp.generated.resources.save_all_your_playlist_data
+import tridermusic.composeapp.generated.resources.save_last_played
+import tridermusic.composeapp.generated.resources.save_last_played_track_and_queue
+import tridermusic.composeapp.generated.resources.save_playback_state
+import tridermusic.composeapp.generated.resources.save_shuffle_and_repeat_mode
+import tridermusic.composeapp.generated.resources.send_back_listening_data_to_google
+import tridermusic.composeapp.generated.resources.set
+import tridermusic.composeapp.generated.resources.settings
+import tridermusic.composeapp.generated.resources.signed_in
+import tridermusic.composeapp.generated.resources.simpmusic_lyrics
+import tridermusic.composeapp.generated.resources.skip_no_music_part
+import tridermusic.composeapp.generated.resources.skip_silent
+import tridermusic.composeapp.generated.resources.skip_sponsor_part_of_video
+import tridermusic.composeapp.generated.resources.socks
+import tridermusic.composeapp.generated.resources.sponsorBlock
+import tridermusic.composeapp.generated.resources.sponsor_block_intro
+import tridermusic.composeapp.generated.resources.spotify
+import tridermusic.composeapp.generated.resources.spotify_canvas_cache
+import tridermusic.composeapp.generated.resources.spotify_lyrics_info
+import tridermusic.composeapp.generated.resources.storage
+import tridermusic.composeapp.generated.resources.such_as_music_video_lyrics_video_podcasts_and_more
+import tridermusic.composeapp.generated.resources.third_party_libraries
+import tridermusic.composeapp.generated.resources.thumbnail_cache
+import tridermusic.composeapp.generated.resources.translation_language
+import tridermusic.composeapp.generated.resources.translation_language_message
+import tridermusic.composeapp.generated.resources.translucent_bottom_navigation_bar
+import tridermusic.composeapp.generated.resources.unknown
+import tridermusic.composeapp.generated.resources.update_channel
+import tridermusic.composeapp.generated.resources.upload_your_listening_history_to_youtube_music_server_it_will_make_yt_music_recommendation_system_better_working_only_if_logged_in
+import tridermusic.composeapp.generated.resources.use_ai_translation
+import tridermusic.composeapp.generated.resources.use_ai_translation_description
+import tridermusic.composeapp.generated.resources.use_your_system_equalizer
+import tridermusic.composeapp.generated.resources.user_interface
+import tridermusic.composeapp.generated.resources.version
+import tridermusic.composeapp.generated.resources.version_format
+import tridermusic.composeapp.generated.resources.video_download_quality
+import tridermusic.composeapp.generated.resources.video_quality
+import tridermusic.composeapp.generated.resources.warning
+import tridermusic.composeapp.generated.resources.weekly
+import tridermusic.composeapp.generated.resources.what_segments_will_be_skipped
+import tridermusic.composeapp.generated.resources.you_can_see_the_content_below_the_bottom_bar
+import tridermusic.composeapp.generated.resources.your_320kbps_url
+import tridermusic.composeapp.generated.resources.youtube_account
+import tridermusic.composeapp.generated.resources.youtube_subtitle_language
+import tridermusic.composeapp.generated.resources.youtube_subtitle_language_message
+import tridermusic.composeapp.generated.resources.youtube_transcript
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
@@ -423,8 +423,7 @@ fun SettingScreen(
     val spotifyLoggedIn by viewModel.spotifyLogIn.collectAsStateWithLifecycle()
     val spotifyLyrics by viewModel.spotifyLyrics.collectAsStateWithLifecycle()
     val spotifyCanvas by viewModel.spotifyCanvas.collectAsStateWithLifecycle()
-    val enableSponsorBlock by viewModel.sponsorBlockEnabled.map { it == TRUE }.collectAsStateWithLifecycle(initialValue = false)
-    val skipSegments by viewModel.sponsorBlockCategories.collectAsStateWithLifecycle()
+
     val playerCache by viewModel.cacheSize.collectAsStateWithLifecycle()
     val downloadedCache by viewModel.downloadedCacheSize.collectAsStateWithLifecycle()
     val thumbnailCache by viewModel.thumbCacheSize.collectAsStateWithLifecycle()
@@ -458,8 +457,7 @@ fun SettingScreen(
     val autoBackupLastTime by viewModel.autoBackupLastTime.collectAsStateWithLifecycle()
     val updateChannel by viewModel.updateChannel.collectAsStateWithLifecycle()
     val enableLiquidGlass by viewModel.enableLiquidGlass.collectAsStateWithLifecycle()
-    val discordLoggedIn by viewModel.discordLoggedIn.collectAsStateWithLifecycle()
-    val richPresenceEnabled by viewModel.richPresenceEnabled.collectAsStateWithLifecycle()
+
     val keepServiceAlive by viewModel.keepServiceAlive.collectAsStateWithLifecycle()
 
     val crossfadeEnabled by viewModel.crossfadeEnabled.collectAsStateWithLifecycle()
@@ -1476,7 +1474,7 @@ fun SettingScreen(
                 )
                 SettingItem(
                     title = stringResource(Res.string.enable_spotify_lyrics),
-                    subtitle = stringResource(Res.string.spotify_lyrícs_info),
+                    subtitle = stringResource(Res.string.spotify_lyrics_info),
                     switch = (spotifyLyrics to { viewModel.setSpotifyLyrics(it) }),
                     isEnable = spotifyLoggedIn,
                     onDisable = {
@@ -1498,120 +1496,8 @@ fun SettingScreen(
                 )
             }
         }
-        item(key = "discord") {
-            Column {
-                Text(
-                    text = stringResource(Res.string.discord_integration),
-                    style = typo().labelMedium,
-                    color = white,
-                    modifier = Modifier.padding(vertical = 8.dp),
-                )
-                SettingItem(
-                    title = stringResource(Res.string.log_in_to_discord),
-                    subtitle =
-                        if (discordLoggedIn) {
-                            stringResource(Res.string.logged_in)
-                        } else {
-                            stringResource(Res.string.intro_login_to_discord)
-                        },
-                    onClick = {
-                        if (discordLoggedIn) {
-                            viewModel.logOutDiscord()
-                        } else {
-                            navController.navigate(DiscordLoginDestination)
-                        }
-                    },
-                )
-                SettingItem(
-                    title = stringResource(Res.string.enable_rich_presence),
-                    subtitle = stringResource(Res.string.rich_presence_info),
-                    switch = (richPresenceEnabled to { viewModel.setDiscordRichPresenceEnabled(it) }),
-                    isEnable = discordLoggedIn,
-                    onDisable = {
-                        if (discordLoggedIn) {
-                            viewModel.setDiscordRichPresenceEnabled(false)
-                        }
-                    },
-                )
-            }
-        }
-        item(key = "sponsor_block") {
-            Column {
-                Text(
-                    text = stringResource(Res.string.sponsorBlock),
-                    style = typo().labelMedium,
-                    color = white,
-                    modifier = Modifier.padding(vertical = 8.dp),
-                )
-                SettingItem(
-                    title = stringResource(Res.string.enable_sponsor_block),
-                    subtitle = stringResource(Res.string.skip_sponsor_part_of_video),
-                    switch = (enableSponsorBlock to { viewModel.setSponsorBlockEnabled(it) }),
-                )
-                val listName =
-                    SponsorBlockType.toList().map { it.displayString() }
-                SettingItem(
-                    title = stringResource(Res.string.categories_sponsor_block),
-                    subtitle = stringResource(Res.string.what_segments_will_be_skipped),
-                    onClick = {
-                        viewModel.setAlertData(
-                            SettingAlertState(
-                                title = runBlocking { getString(Res.string.categories_sponsor_block) },
-                                multipleSelect =
-                                    SettingAlertState.SelectData(
-                                        listSelect =
-                                            listName
-                                                .mapIndexed { index, item ->
-                                                    (
-                                                        skipSegments?.contains(
-                                                            SponsorBlockType.toList().getOrNull(index)?.value,
-                                                        ) == true
-                                                    ) to item
-                                                }.also {
-                                                    Logger.w("SettingScreen", "SettingAlertState: $skipSegments")
-                                                    Logger.w("SettingScreen", "SettingAlertState: $it")
-                                                },
-                                    ),
-                                confirm =
-                                    runBlocking { getString(Res.string.save) } to { state ->
-                                        viewModel.setSponsorBlockCategories(
-                                            state.multipleSelect
-                                                ?.getListSelected()
-                                                ?.map { selected ->
-                                                    listName.indexOf(selected)
-                                                }?.mapNotNull { s ->
-                                                    SponsorBlockType.toList().getOrNull(s).let {
-                                                        it?.value
-                                                    }
-                                                }?.toCollection(ArrayList()) ?: arrayListOf(),
-                                        )
-                                    },
-                                dismiss = runBlocking { getString(Res.string.cancel) },
-                            ),
-                        )
-                    },
-                    isEnable = enableSponsorBlock,
-                )
-                val beforeUrl = stringResource(Res.string.sponsor_block_intro).substringBefore("https://sponsor.ajay.app/")
-                val afterUrl = stringResource(Res.string.sponsor_block_intro).substringAfter("https://sponsor.ajay.app/")
-                Text(
-                    buildAnnotatedString {
-                        append(beforeUrl)
-                        withLink(
-                            LinkAnnotation.Url(
-                                "https://sponsor.ajay.app/",
-                                TextLinkStyles(style = SpanStyle(color = md_theme_dark_primary)),
-                            ),
-                        ) {
-                            append("https://sponsor.ajay.app/")
-                        }
-                        append(afterUrl)
-                    },
-                    style = typo().bodySmall,
-                    modifier = Modifier.padding(horizontal = 24.dp, vertical = 16.dp),
-                )
-            }
-        }
+
+
         if (getPlatform() == Platform.Android) {
             item(key = "storage") {
                 Column {
@@ -2133,13 +2019,7 @@ fun SettingScreen(
                         uriHandler.openUri("https://github.com/maxrave-dev")
                     },
                 )
-                SettingItem(
-                    title = stringResource(Res.string.buy_me_a_coffee),
-                    subtitle = stringResource(Res.string.donation),
-                    onClick = {
-                        uriHandler.openUri("https://github.com/sponsors/maxrave-dev")
-                    },
-                )
+
                 SettingItem(
                     title = stringResource(Res.string.third_party_libraries),
                     subtitle = stringResource(Res.string.description_and_licenses),

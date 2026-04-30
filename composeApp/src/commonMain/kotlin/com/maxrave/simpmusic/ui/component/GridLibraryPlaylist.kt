@@ -61,8 +61,8 @@ import com.maxrave.simpmusic.ui.theme.typo
 import com.maxrave.simpmusic.ui.theme.white
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.create
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.create
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

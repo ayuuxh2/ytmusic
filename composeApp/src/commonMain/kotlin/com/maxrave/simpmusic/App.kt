@@ -100,20 +100,20 @@ import kotlinx.datetime.toLocalDateTime
 import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.koinInject
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.cancel
-import simpmusic.composeapp.generated.resources.do_not_show_again
-import simpmusic.composeapp.generated.resources.download
-import simpmusic.composeapp.generated.resources.good_night
-import simpmusic.composeapp.generated.resources.notification
-import simpmusic.composeapp.generated.resources.sleep_timer_off
-import simpmusic.composeapp.generated.resources.this_app_needs_to_access_your_notification
-import simpmusic.composeapp.generated.resources.this_link_is_not_supported
-import simpmusic.composeapp.generated.resources.unknown
-import simpmusic.composeapp.generated.resources.update_available
-import simpmusic.composeapp.generated.resources.update_message
-import simpmusic.composeapp.generated.resources.version_format
-import simpmusic.composeapp.generated.resources.yes
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.cancel
+import tridermusic.composeapp.generated.resources.do_not_show_again
+import tridermusic.composeapp.generated.resources.download
+import tridermusic.composeapp.generated.resources.good_night
+import tridermusic.composeapp.generated.resources.notification
+import tridermusic.composeapp.generated.resources.sleep_timer_off
+import tridermusic.composeapp.generated.resources.this_app_needs_to_access_your_notification
+import tridermusic.composeapp.generated.resources.this_link_is_not_supported
+import tridermusic.composeapp.generated.resources.unknown
+import tridermusic.composeapp.generated.resources.update_available
+import tridermusic.composeapp.generated.resources.update_message
+import tridermusic.composeapp.generated.resources.version_format
+import tridermusic.composeapp.generated.resources.yes
 import kotlin.time.ExperimentalTime
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalTime::class, ExperimentalFoundationApi::class)

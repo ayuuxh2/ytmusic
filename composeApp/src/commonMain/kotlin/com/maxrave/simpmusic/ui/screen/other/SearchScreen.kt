@@ -108,27 +108,27 @@ import kotlinx.coroutines.delay
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.koinInject
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.albums
-import simpmusic.composeapp.generated.resources.artists
-import simpmusic.composeapp.generated.resources.baseline_arrow_outward_24
-import simpmusic.composeapp.generated.resources.baseline_close_24
-import simpmusic.composeapp.generated.resources.baseline_history_24
-import simpmusic.composeapp.generated.resources.baseline_search_24
-import simpmusic.composeapp.generated.resources.clear_search_history
-import simpmusic.composeapp.generated.resources.error_occurred
-import simpmusic.composeapp.generated.resources.everything_you_need
-import simpmusic.composeapp.generated.resources.holder
-import simpmusic.composeapp.generated.resources.in_search
-import simpmusic.composeapp.generated.resources.no_results_found
-import simpmusic.composeapp.generated.resources.playlists
-import simpmusic.composeapp.generated.resources.podcasts
-import simpmusic.composeapp.generated.resources.retry
-import simpmusic.composeapp.generated.resources.search_for
-import simpmusic.composeapp.generated.resources.search_for_songs_artists_albums_playlists_and_more
-import simpmusic.composeapp.generated.resources.song
-import simpmusic.composeapp.generated.resources.videos
-import simpmusic.composeapp.generated.resources.what_do_you_want_to_listen_to
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.albums
+import tridermusic.composeapp.generated.resources.artists
+import tridermusic.composeapp.generated.resources.baseline_arrow_outward_24
+import tridermusic.composeapp.generated.resources.baseline_close_24
+import tridermusic.composeapp.generated.resources.baseline_history_24
+import tridermusic.composeapp.generated.resources.baseline_search_24
+import tridermusic.composeapp.generated.resources.clear_search_history
+import tridermusic.composeapp.generated.resources.error_occurred
+import tridermusic.composeapp.generated.resources.everything_you_need
+import tridermusic.composeapp.generated.resources.holder
+import tridermusic.composeapp.generated.resources.in_search
+import tridermusic.composeapp.generated.resources.no_results_found
+import tridermusic.composeapp.generated.resources.playlists
+import tridermusic.composeapp.generated.resources.podcasts
+import tridermusic.composeapp.generated.resources.retry
+import tridermusic.composeapp.generated.resources.search_for
+import tridermusic.composeapp.generated.resources.search_for_songs_artists_albums_playlists_and_more
+import tridermusic.composeapp.generated.resources.song
+import tridermusic.composeapp.generated.resources.videos
+import tridermusic.composeapp.generated.resources.what_do_you_want_to_listen_to
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -558,13 +558,7 @@ fun SearchScreen(
                                 textAlign = TextAlign.Center,
                                 modifier = Modifier.fillMaxWidth(),
                             )
-                            SimpMusicChartButton(
-                                modifier =
-                                    Modifier
-                                        .padding(top = 10.dp),
-                            ) {
-                                uriHandler.openUri("https://chart.simpmusic.org")
-                            }
+
                         }
                     }
                 }

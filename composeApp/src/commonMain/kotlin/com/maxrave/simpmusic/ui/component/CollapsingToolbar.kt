@@ -76,8 +76,8 @@ import com.maxrave.simpmusic.ui.theme.md_theme_dark_background
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged
 import org.jetbrains.compose.resources.painterResource
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.holder_video
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.holder_video
 
 private val paddingMedium = 0.dp
 

@@ -99,21 +99,21 @@ import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.album
-import simpmusic.composeapp.generated.resources.album_length
-import simpmusic.composeapp.generated.resources.baseline_arrow_back_ios_new_24
-import simpmusic.composeapp.generated.resources.baseline_downloaded
-import simpmusic.composeapp.generated.resources.baseline_pause_circle_24
-import simpmusic.composeapp.generated.resources.baseline_play_circle_24
-import simpmusic.composeapp.generated.resources.baseline_shuffle_24
-import simpmusic.composeapp.generated.resources.download_button
-import simpmusic.composeapp.generated.resources.downloaded
-import simpmusic.composeapp.generated.resources.downloading
-import simpmusic.composeapp.generated.resources.holder
-import simpmusic.composeapp.generated.resources.no_description
-import simpmusic.composeapp.generated.resources.other_version
-import simpmusic.composeapp.generated.resources.year_and_category
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.album
+import tridermusic.composeapp.generated.resources.album_length
+import tridermusic.composeapp.generated.resources.baseline_arrow_back_ios_new_24
+import tridermusic.composeapp.generated.resources.baseline_downloaded
+import tridermusic.composeapp.generated.resources.baseline_pause_circle_24
+import tridermusic.composeapp.generated.resources.baseline_play_circle_24
+import tridermusic.composeapp.generated.resources.baseline_shuffle_24
+import tridermusic.composeapp.generated.resources.download_button
+import tridermusic.composeapp.generated.resources.downloaded
+import tridermusic.composeapp.generated.resources.downloading
+import tridermusic.composeapp.generated.resources.holder
+import tridermusic.composeapp.generated.resources.no_description
+import tridermusic.composeapp.generated.resources.other_version
+import tridermusic.composeapp.generated.resources.year_and_category
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

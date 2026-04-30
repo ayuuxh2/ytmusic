@@ -308,7 +308,7 @@
     <string name="log_in_to_spotify">تسجيل الدخول إلى Spotify</string>
     <string name="intro_login_to_spotify">تسجيل الدخول إلى كلمات Spotify و Canvas والمزيد</string>
     <string name="enable_spotify_lyrics">تمكين كلمات أغاني Spotify</string>
-    <string name="spotify_lyrícs_info">المزيد من كلمات الأغاني بدون ترجمة</string>
+    <string name="spotify_lyrics_info">المزيد من كلمات الأغاني بدون ترجمة</string>
     <string name="enable_canvas">تمكين Canvas</string>
     <string name="canvas_info">إظهار Spotify Canvas في SimpMusic</string>
     <string name="spotify_lyrics_provider">كلمات الأغاني المقدمة من Spotify</string>

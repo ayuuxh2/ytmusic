@@ -52,14 +52,14 @@ import com.maxrave.simpmusic.viewModel.NotificationViewModel
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.album
-import simpmusic.composeapp.generated.resources.baseline_arrow_back_ios_new_24
-import simpmusic.composeapp.generated.resources.holder
-import simpmusic.composeapp.generated.resources.new_release
-import simpmusic.composeapp.generated.resources.no_notification
-import simpmusic.composeapp.generated.resources.notification
-import simpmusic.composeapp.generated.resources.singles
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.album
+import tridermusic.composeapp.generated.resources.baseline_arrow_back_ios_new_24
+import tridermusic.composeapp.generated.resources.holder
+import tridermusic.composeapp.generated.resources.new_release
+import tridermusic.composeapp.generated.resources.no_notification
+import tridermusic.composeapp.generated.resources.notification
+import tridermusic.composeapp.generated.resources.singles
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

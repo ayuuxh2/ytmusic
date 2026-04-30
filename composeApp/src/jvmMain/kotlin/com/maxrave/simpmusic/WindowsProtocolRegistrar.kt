@@ -3,13 +3,13 @@ package com.maxrave.simpmusic
 import com.maxrave.logger.Logger
 
 /**
- * Registers the "simpmusic://" custom URI protocol handler in Windows Registry
+ * Registers the "ayuuxh://" custom URI protocol handler in Windows Registry
  * under HKEY_CURRENT_USER (no admin rights required).
  *
  * Registry structure:
  * ```
- * HKCU\Software\Classes\simpmusic
- *     (Default) = "URL:SimpMusic Protocol"
+ * HKCU\Software\Classes\ayuuxh
+ *     (Default) = "URL:ayuuxh Protocol"
  *     URL Protocol = ""
  *     \DefaultIcon
  *         (Default) = "\"<exe_path>\",0"
@@ -19,7 +19,7 @@ import com.maxrave.logger.Logger
  */
 object WindowsProtocolRegistrar {
     private const val TAG = "WindowsProtocolRegistrar"
-    private const val SCHEME = "simpmusic"
+    private const val SCHEME = "ayuuxh"
     private const val REG_KEY = "HKCU\\Software\\Classes\\$SCHEME"
 
     fun register() {
@@ -36,10 +36,10 @@ object WindowsProtocolRegistrar {
                 return
             }
 
-            Logger.d(TAG, "Registering simpmusic:// protocol handler -> $exePath")
+            Logger.d(TAG, "Registering ayuuxh:// protocol handler -> $exePath")
 
             // Main key with protocol description
-            regAdd(REG_KEY, null, "URL:SimpMusic Protocol")
+            regAdd(REG_KEY, null, "URL:ayuuxh Protocol")
             regAdd(REG_KEY, "URL Protocol", "")
 
             // DefaultIcon

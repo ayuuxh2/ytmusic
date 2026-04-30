@@ -21,8 +21,8 @@ import com.maxrave.logger.Logger
 import com.maxrave.simpmusic.viewModel.SharedViewModel
 import com.maxrave.simpmusic.viewModel.UIEvent
 import org.jetbrains.compose.resources.painterResource
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.circle_app_icon
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.circle_app_icon
 import java.awt.Dimension
 import java.util.prefs.Preferences
 
@@ -44,7 +44,7 @@ fun MiniPlayerWindow(
     sharedViewModel: SharedViewModel,
     onCloseRequest: () -> Unit,
 ) {
-    val prefs = remember { Preferences.userRoot().node("SimpMusic/MiniPlayer") }
+    val prefs = remember { Preferences.userRoot().node("ayuuxh/MiniPlayer") }
 
     // Minimum size constraints
     val minWidth = 200f
@@ -85,7 +85,7 @@ fun MiniPlayerWindow(
 
     Window(
         onCloseRequest = onCloseRequest,
-        title = "SimpMusic - Mini Player",
+        title = "ayuuxh - Mini Player",
         icon = painterResource(Res.drawable.circle_app_icon),
         alwaysOnTop = true,
         undecorated = true,

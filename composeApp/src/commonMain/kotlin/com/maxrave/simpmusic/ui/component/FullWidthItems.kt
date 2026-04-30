@@ -86,18 +86,18 @@ import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.koinInject
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.add_to_queue
-import simpmusic.composeapp.generated.resources.album
-import simpmusic.composeapp.generated.resources.artists
-import simpmusic.composeapp.generated.resources.baseline_add_24
-import simpmusic.composeapp.generated.resources.baseline_more_vert_24
-import simpmusic.composeapp.generated.resources.download_for_offline_white
-import simpmusic.composeapp.generated.resources.holder
-import simpmusic.composeapp.generated.resources.playlist
-import simpmusic.composeapp.generated.resources.podcasts
-import simpmusic.composeapp.generated.resources.radio
-import simpmusic.composeapp.generated.resources.you
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.add_to_queue
+import tridermusic.composeapp.generated.resources.album
+import tridermusic.composeapp.generated.resources.artists
+import tridermusic.composeapp.generated.resources.baseline_add_24
+import tridermusic.composeapp.generated.resources.baseline_more_vert_24
+import tridermusic.composeapp.generated.resources.download_for_offline_white
+import tridermusic.composeapp.generated.resources.holder
+import tridermusic.composeapp.generated.resources.playlist
+import tridermusic.composeapp.generated.resources.podcasts
+import tridermusic.composeapp.generated.resources.radio
+import tridermusic.composeapp.generated.resources.you
 import kotlin.math.roundToInt
 
 /**

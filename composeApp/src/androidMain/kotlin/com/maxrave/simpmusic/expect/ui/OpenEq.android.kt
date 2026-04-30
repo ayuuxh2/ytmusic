@@ -11,8 +11,8 @@ import kotlinx.coroutines.runBlocking
 import multiplatform.network.cmptoast.ToastGravity
 import multiplatform.network.cmptoast.showToast
 import org.jetbrains.compose.resources.getString
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.no_equalizer
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.no_equalizer
 
 @Composable
 actual fun openEqResult(audioSessionId: Int): OpenEqLauncher {

@@ -35,9 +35,9 @@ import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.datetime.LocalDateTime
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.added_local_playlist
-import simpmusic.composeapp.generated.resources.youtube_liked_music
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.added_local_playlist
+import tridermusic.composeapp.generated.resources.youtube_liked_music
 
 class LibraryViewModel(
     private val dataStoreManager: DataStoreManager,
@@ -78,9 +78,6 @@ class LibraryViewModel(
         MutableStateFlow(LocalResource.Loading())
     val downloadedPlaylist: StateFlow<LocalResource<List<PlaylistType>>> get() = _downloadedPlaylist.asStateFlow()
 
-    private val _chartPlaylists: MutableStateFlow<LocalResource<List<ChartItem>>> =
-        MutableStateFlow(LocalResource.Loading())
-    val chartPlaylists: StateFlow<LocalResource<List<ChartItem>>> get() = _chartPlaylists.asStateFlow()
 
     private val _listCanvasSong: MutableStateFlow<LocalResource<List<SongEntity>>> =
         MutableStateFlow(LocalResource.Loading())
@@ -246,17 +243,6 @@ class LibraryViewModel(
         }
     }
 
-    fun getChartPlaylists() {
-        _chartPlaylists.value = LocalResource.Loading()
-        viewModelScope.launch {
-            playlistRepository.getChartPlaylist().collectLatest {
-                when (it) {
-                    is Resource.Success -> _chartPlaylists.value = LocalResource.Success(it.data ?: emptyList())
-                    is Resource.Error -> _chartPlaylists.value = LocalResource.Error(it.message ?: "Unknown error")
-                }
-            }
-        }
-    }
 
     fun createPlaylist(title: String) {
         viewModelScope.launch {

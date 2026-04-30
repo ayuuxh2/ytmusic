@@ -32,7 +32,7 @@
         </intent>
     </queries>
     <queries>
-        <package android:name="com.maxrave.simpmusic" />
+        <package android:name="com.ayuuxh.music" />
     </queries>
     <queries>
         <intent>
@@ -41,7 +41,7 @@
     </queries>
 
     <application
-        android:name=".SimpMusicApplication"
+        android:name="com.maxrave.simpmusic.SimpMusicApplication"
         android:allowBackup="true"
         android:appCategory="audio"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -58,7 +58,7 @@
         tools:targetApi="tiramisu">
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.maxrave.simpmusic.MainActivity"
             android:configChanges="keyboardHidden|screenSize|screenLayout|smallestScreenSize"
             android:exported="true"
             android:supportsPictureInPicture="true"
@@ -135,7 +135,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data android:scheme="https" />
-                <data android:host="simpmusic.org" />
+                <data android:host="ayuuxh.org" />
                 <data android:pathPrefix="/app/" />
             </intent-filter>
 
@@ -146,7 +146,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="simpmusic" />
+                <data android:scheme="ayuuxh" />
             </intent-filter>
 
             <!-- Share filter -->
@@ -232,11 +232,8 @@
             android:resource="@xml/automotive_app_desc" />
 
 
-        <meta-data
-            android:name="io.sentry.auto-init"
-            android:value="false" />
-
-        <receiver android:name=".ui.widget.AppWidgetReceiver"
+        <receiver
+            android:name="com.maxrave.simpmusic.ui.widget.AppWidgetReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

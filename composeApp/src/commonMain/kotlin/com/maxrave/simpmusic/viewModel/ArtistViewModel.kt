@@ -28,9 +28,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.radio
-import simpmusic.composeapp.generated.resources.shuffle
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.radio
+import tridermusic.composeapp.generated.resources.shuffle
 
 class ArtistViewModel(
     private val artistRepository: ArtistRepository,

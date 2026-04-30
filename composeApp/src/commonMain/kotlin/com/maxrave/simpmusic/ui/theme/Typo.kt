@@ -9,8 +9,8 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.resources.Font
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.poppins_medium
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.poppins_medium
 
 @Composable
 fun fontFamily(): FontFamily =

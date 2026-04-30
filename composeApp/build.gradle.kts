@@ -11,8 +11,6 @@ import java.net.URI
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
-import java.util.Properties
-
 val isFullBuild: Boolean =
     try {
         extra["isFullBuild"] == "true"
@@ -52,16 +50,6 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_17)
         }
     }
-
-//    listOf(
-//        iosArm64(),
-//        iosSimulatorArm64()
-//    ).forEach { iosTarget ->
-//        iosTarget.binaries.framework {
-//            baseName = "ComposeApp"
-//            isStatic = true
-//        }
-//    }
 
     jvm()
 
@@ -165,7 +153,6 @@ kotlin {
         jvmMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutinesSwing)
-            implementation(libs.sentry.jvm)
             implementation(libs.native.tray)
             implementation(projects.mediaJvmUi)
         }
@@ -204,7 +191,8 @@ compose.desktop {
             }
             targetFormats(*listTarget.toTypedArray())
             modules("jdk.unsupported")
-            packageName = "SimpMusic"
+            // Keep the internal distribution package stable so Compose resource imports do not churn.
+            packageName = "tridermusic"
             macOS {
                 val formatedDate =
                     Instant.now().let {
@@ -284,23 +272,6 @@ buildkonfig {
         buildConfigField(STRING, "versionName", versionName)
         buildConfigField(INT, "versionCode", "$versionCode")
 
-        if (isFullBuild) {
-            try {
-                println("Full build detected, enabling Sentry DSN")
-                val properties = Properties()
-                properties.load(rootProject.file("local.properties").inputStream())
-                buildConfigField(
-                    STRING,
-                    "sentryDsn",
-                    properties.getProperty("SENTRY_DSN") ?: "",
-                )
-            } catch (e: Exception) {
-                println("Failed to load SENTRY_DSN from local.properties: ${e.message}")
-                buildConfigField(STRING, "sentryDsn", "")
-            }
-        } else {
-            buildConfigField(STRING, "sentryDsn", "")
-        }
     }
 }
 
@@ -347,7 +318,7 @@ afterEvaluate {
     }
 
     fun packAppImage(isRelease: Boolean) {
-        val appName = "SimpMusic"
+        val appName = "tridermusic"
         val appDirSrc = project.file("appimage")
         val packageOutput =
             if (isRelease) {
@@ -411,9 +382,9 @@ afterEvaluate {
             """[Desktop Entry]
             |Type=Application
             |Version=1.0
-            |Name=SimpMusic
-            |Comment=SimpMusic v$versionName - FOSS YouTube Music Client
-            |Exec=bin/SimpMusic %u
+            |Name=Trider Music
+            |Comment=Trider Music v$versionName - Desktop Music Client
+            |Exec=bin/$appName %u
             |Icon=simpmusic
             |Terminal=false
             |Categories=Audio;AudioVideo;

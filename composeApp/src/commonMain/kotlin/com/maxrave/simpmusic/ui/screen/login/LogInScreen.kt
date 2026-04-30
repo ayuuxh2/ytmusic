@@ -49,11 +49,11 @@ import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.baseline_arrow_back_ios_new_24
-import simpmusic.composeapp.generated.resources.log_in
-import simpmusic.composeapp.generated.resources.login_failed
-import simpmusic.composeapp.generated.resources.login_success
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.baseline_arrow_back_ios_new_24
+import tridermusic.composeapp.generated.resources.log_in
+import tridermusic.composeapp.generated.resources.login_failed
+import tridermusic.composeapp.generated.resources.login_success
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalHazeMaterialsApi::class)
 @Composable

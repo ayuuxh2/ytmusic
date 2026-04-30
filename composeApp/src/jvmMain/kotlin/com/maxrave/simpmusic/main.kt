@@ -35,8 +35,6 @@ import com.maxrave.simpmusic.ui.mini_player.MiniPlayerWindow
 import com.maxrave.simpmusic.utils.VersionManager
 import com.maxrave.simpmusic.viewModel.SharedViewModel
 import com.maxrave.simpmusic.viewModel.changeLanguageNative
-import io.sentry.Sentry
-import io.sentry.SentryLevel
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import multiplatform.network.cmptoast.ToastHost
@@ -50,15 +48,15 @@ import org.koin.core.context.loadKoinModules
 import org.koin.core.context.startKoin
 import org.koin.java.KoinJavaComponent.inject
 import org.koin.mp.KoinPlatform.getKoin
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.app_name
-import simpmusic.composeapp.generated.resources.circle_app_icon
-import simpmusic.composeapp.generated.resources.close_miniplayer
-import simpmusic.composeapp.generated.resources.explicit_content_blocked
-import simpmusic.composeapp.generated.resources.open_app
-import simpmusic.composeapp.generated.resources.open_miniplayer
-import simpmusic.composeapp.generated.resources.quit_app
-import simpmusic.composeapp.generated.resources.time_out_check_internet_connection_or_change_piped_instance_in_settings
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.app_name
+import tridermusic.composeapp.generated.resources.circle_app_icon
+import tridermusic.composeapp.generated.resources.close_miniplayer
+import tridermusic.composeapp.generated.resources.explicit_content_blocked
+import tridermusic.composeapp.generated.resources.open_app
+import tridermusic.composeapp.generated.resources.open_miniplayer
+import tridermusic.composeapp.generated.resources.quit_app
+import tridermusic.composeapp.generated.resources.time_out_check_internet_connection_or_change_piped_instance_in_settings
 
 @OptIn(ExperimentalMaterial3Api::class)
 fun main(args: Array<String>) {
@@ -86,7 +84,7 @@ fun main(args: Array<String>) {
     // Note: macOS does NOT pass URI as args — it uses Apple Events via setOpenURIHandler
     val deepLinkArg =
         args.firstOrNull()?.takeIf { arg ->
-            arg.startsWith("simpmusic://") || arg.startsWith("http://") || arg.startsWith("https://")
+            arg.startsWith("ayuuxh://") || arg.startsWith("http://") || arg.startsWith("https://")
         }
     if (!isMacOS) {
         deepLinkArg?.let { DesktopDeepLinkHandler.onNewUri(it) }
@@ -109,14 +107,6 @@ fun main(args: Array<String>) {
     changeLanguageNative(language)
 
     VersionManager.initialize()
-    if (BuildKonfig.sentryDsn.isNotEmpty()) {
-        Sentry.init { options ->
-            options.dsn = BuildKonfig.sentryDsn
-            options.release = "simpmusic-desktop@${VersionManager.getVersionName()}"
-            options.setDiagnosticLevel(SentryLevel.ERROR)
-        }
-    }
-
     val mediaPlayerHandler by inject<MediaPlayerHandler>(MediaPlayerHandler::class.java)
     mediaPlayerHandler.showToast = { type ->
         showToast(
@@ -131,13 +121,9 @@ fun main(args: Array<String>) {
             },
         )
     }
-    mediaPlayerHandler.pushPlayerError = { error ->
-        Sentry.withScope { scope ->
-            Sentry.captureMessage("Player Error: ${error.message}, code: ${error.errorCode}, code name: ${error.errorCodeName}")
-        }
-    }
+    mediaPlayerHandler.pushPlayerError = { _ -> }
 
-    // Register simpmusic:// protocol handler on Windows (HKCU, no admin needed)
+    // Register ayuuxh:// protocol handler on Windows (HKCU, no admin needed)
     WindowsProtocolRegistrar.register()
 
     val sharedViewModel = getKoin().get<SharedViewModel>()

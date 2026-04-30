@@ -23,9 +23,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.TextUnit
 import org.jetbrains.compose.resources.stringResource
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.less
-import simpmusic.composeapp.generated.resources.more
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.less
+import tridermusic.composeapp.generated.resources.more
 
 @Composable
 fun ExpandableText(

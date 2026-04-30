@@ -1,7 +1,16 @@
 package com.maxrave.simpmusic.di
 
+import com.maxrave.domain.manager.DataStoreManager
+import com.maxrave.domain.repository.AlbumRepository
+import com.maxrave.domain.repository.CacheRepository
+import com.maxrave.domain.repository.LocalPlaylistRepository
+import com.maxrave.domain.repository.LyricsCanvasRepository
+import com.maxrave.domain.repository.PlaylistRepository
+import com.maxrave.domain.repository.SongRepository
+import com.maxrave.domain.repository.StreamRepository
+import com.maxrave.domain.repository.CommonRepository
+import com.maxrave.domain.repository.AnalyticsRepository
 import com.maxrave.simpmusic.viewModel.AlbumViewModel
-import com.maxrave.simpmusic.viewModel.AnalyticsViewModel
 import com.maxrave.simpmusic.viewModel.ArtistViewModel
 import com.maxrave.simpmusic.viewModel.HomeViewModel
 import com.maxrave.simpmusic.viewModel.LibraryDynamicPlaylistViewModel
@@ -25,15 +34,16 @@ val viewModelModule =
     module {
         single {
             SharedViewModel(
-                get(),
-                get(),
-                get(),
-                get(),
-                get(),
-                get(),
-                get(),
-                get(),
-                get(),
+                get<DataStoreManager>(),
+                get<StreamRepository>(),
+                get<SongRepository>(),
+                get<AlbumRepository>(),
+                get<LocalPlaylistRepository>(),
+                get<PlaylistRepository>(),
+                get<LyricsCanvasRepository>(),
+                get<CacheRepository>(),
+                get<CommonRepository>(),
+                get<AnalyticsRepository>(),
             )
         }
         single {
@@ -135,15 +145,6 @@ val viewModelModule =
         }
         viewModel {
             MoodViewModel(
-                get(),
-                get(),
-            )
-        }
-        viewModel {
-            AnalyticsViewModel(
-                get(),
-                get(),
-                get(),
                 get(),
                 get(),
             )

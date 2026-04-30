@@ -39,16 +39,16 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import org.koin.core.component.inject
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.backup_create_failed
-import simpmusic.composeapp.generated.resources.backup_create_success
-import simpmusic.composeapp.generated.resources.backup_in_progress
-import simpmusic.composeapp.generated.resources.clear_canvas_cache
-import simpmusic.composeapp.generated.resources.clear_downloaded_cache
-import simpmusic.composeapp.generated.resources.clear_player_cache
-import simpmusic.composeapp.generated.resources.clear_thumbnail_cache
-import simpmusic.composeapp.generated.resources.restore_failed
-import simpmusic.composeapp.generated.resources.restore_in_progress
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.backup_create_failed
+import tridermusic.composeapp.generated.resources.backup_create_success
+import tridermusic.composeapp.generated.resources.backup_in_progress
+import tridermusic.composeapp.generated.resources.clear_canvas_cache
+import tridermusic.composeapp.generated.resources.clear_downloaded_cache
+import tridermusic.composeapp.generated.resources.clear_player_cache
+import tridermusic.composeapp.generated.resources.clear_thumbnail_cache
+import tridermusic.composeapp.generated.resources.restore_failed
+import tridermusic.composeapp.generated.resources.restore_in_progress
 
 class SettingsViewModel(
     private val dataStoreManager: DataStoreManager,
@@ -76,11 +76,7 @@ class SettingsViewModel(
     val saveRecentSongAndQueue: StateFlow<String?> = _saveRecentSongAndQueue
     private var _lastCheckForUpdate: MutableStateFlow<String?> = MutableStateFlow(null)
     val lastCheckForUpdate: StateFlow<String?> = _lastCheckForUpdate
-    private var _sponsorBlockEnabled: MutableStateFlow<String?> = MutableStateFlow(null)
-    val sponsorBlockEnabled: StateFlow<String?> = _sponsorBlockEnabled
-    private var _sponsorBlockCategories: MutableStateFlow<ArrayList<String>?> =
-        MutableStateFlow(null)
-    val sponsorBlockCategories: StateFlow<ArrayList<String>?> = _sponsorBlockCategories
+
     private var _sendBackToGoogle: MutableStateFlow<String?> = MutableStateFlow(null)
     val sendBackToGoogle: StateFlow<String?> = _sendBackToGoogle
     private var _mainLyricsProvider: MutableStateFlow<String?> = MutableStateFlow(null)
@@ -161,11 +157,7 @@ class SettingsViewModel(
     private val _explicitContentEnabled = MutableStateFlow(false)
     val explicitContentEnabled: StateFlow<Boolean> = _explicitContentEnabled
 
-    private val _discordLoggedIn = MutableStateFlow(false)
-    val discordLoggedIn: StateFlow<Boolean> = _discordLoggedIn
 
-    private val _richPresenceEnabled = MutableStateFlow(false)
-    val richPresenceEnabled: StateFlow<Boolean> = _richPresenceEnabled
 
     private val _keepServiceAlive = MutableStateFlow<Boolean>(false)
     val keepServiceAlive: StateFlow<Boolean> = _keepServiceAlive
@@ -243,8 +235,7 @@ class SettingsViewModel(
         getSendBackToGoogle()
         getSaveRecentSongAndQueue()
         getLastCheckForUpdate()
-        getSponsorBlockEnabled()
-        getSponsorBlockCategories()
+
         getTranslationLanguage()
         getYoutubeSubtitleLanguage()
         getLyricsProvider()
@@ -277,8 +268,7 @@ class SettingsViewModel(
         getUpdateChannel()
         getEnableLiquidGlass()
         getExplicitContentEnabled()
-        getDiscordLoggedIn()
-        getDiscordRichPresenceEnabled()
+
         getKeepServiceAlive()
         getKeepYouTubePlaylistOffline()
         getCombineLocalAndYouTubeLiked()
@@ -477,37 +467,7 @@ class SettingsViewModel(
         }
     }
 
-    private fun getDiscordLoggedIn() {
-        viewModelScope.launch {
-            dataStoreManager.discordToken.collect { loggedIn ->
-                _discordLoggedIn.value = loggedIn.isNotEmpty()
-            }
-        }
-    }
 
-    fun logOutDiscord() {
-        viewModelScope.launch {
-            dataStoreManager.setDiscordToken("")
-            delay(100)
-            getDiscordLoggedIn()
-        }
-    }
-
-    private fun getDiscordRichPresenceEnabled() {
-        viewModelScope.launch {
-            dataStoreManager.richPresenceEnabled.collect { enabled ->
-                _richPresenceEnabled.value = enabled == DataStoreManager.TRUE
-            }
-        }
-    }
-
-    fun setDiscordRichPresenceEnabled(enabled: Boolean) {
-        viewModelScope.launch {
-            dataStoreManager.setRichPresenceEnabled(enabled)
-            delay(100)
-            getDiscordRichPresenceEnabled()
-        }
-    }
 
     private fun getExplicitContentEnabled() {
         viewModelScope.launch {
@@ -1003,21 +963,6 @@ class SettingsViewModel(
         }
     }
 
-    fun getSponsorBlockEnabled() {
-        viewModelScope.launch {
-            dataStoreManager.sponsorBlockEnabled.first().let { enabled ->
-                _sponsorBlockEnabled.emit(enabled)
-            }
-        }
-    }
-
-    fun setSponsorBlockEnabled(enabled: Boolean) {
-        viewModelScope.launch {
-            dataStoreManager.setSponsorBlockEnabled(enabled)
-            getSponsorBlockEnabled()
-        }
-    }
-
     fun getPlayVideoInsteadOfAudio() {
         viewModelScope.launch {
             dataStoreManager.watchVideoInsteadOfPlayingAudio.collect { playVideoInsteadOfAudio ->
@@ -1030,25 +975,6 @@ class SettingsViewModel(
         viewModelScope.launch {
             dataStoreManager.setWatchVideoInsteadOfPlayingAudio(playVideoInsteadOfAudio)
             getPlayVideoInsteadOfAudio()
-        }
-    }
-
-    fun getSponsorBlockCategories() {
-        viewModelScope.launch {
-            dataStoreManager.getSponsorBlockCategories().let {
-                log("getSponsorBlockCategories: $it", LogLevel.WARN)
-                _sponsorBlockCategories.emit(it)
-            }
-        }
-    }
-
-    fun setSponsorBlockCategories(list: ArrayList<String>) {
-        log("setSponsorBlockCategories: $list", LogLevel.WARN)
-        viewModelScope.launch {
-            runBlocking(Dispatchers.IO) {
-                dataStoreManager.setSponsorBlockCategories(list)
-            }
-            getSponsorBlockCategories()
         }
     }
 

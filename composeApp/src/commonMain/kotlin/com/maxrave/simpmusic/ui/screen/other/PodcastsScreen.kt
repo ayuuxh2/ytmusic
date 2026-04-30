@@ -89,15 +89,15 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.album_length
-import simpmusic.composeapp.generated.resources.baseline_arrow_back_ios_new_24
-import simpmusic.composeapp.generated.resources.baseline_play_circle_24
-import simpmusic.composeapp.generated.resources.baseline_share_24
-import simpmusic.composeapp.generated.resources.baseline_shuffle_24
-import simpmusic.composeapp.generated.resources.holder
-import simpmusic.composeapp.generated.resources.no_description
-import simpmusic.composeapp.generated.resources.podcasts
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.album_length
+import tridermusic.composeapp.generated.resources.baseline_arrow_back_ios_new_24
+import tridermusic.composeapp.generated.resources.baseline_play_circle_24
+import tridermusic.composeapp.generated.resources.baseline_share_24
+import tridermusic.composeapp.generated.resources.baseline_shuffle_24
+import tridermusic.composeapp.generated.resources.holder
+import tridermusic.composeapp.generated.resources.no_description
+import tridermusic.composeapp.generated.resources.podcasts
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

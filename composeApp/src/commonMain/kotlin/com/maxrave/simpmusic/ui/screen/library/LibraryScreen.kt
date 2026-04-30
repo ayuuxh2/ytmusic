@@ -73,7 +73,7 @@ import com.maxrave.simpmusic.ui.component.LibraryItem
 import com.maxrave.simpmusic.ui.component.LibraryItemState
 import com.maxrave.simpmusic.ui.component.LibraryItemType
 import com.maxrave.simpmusic.ui.component.LibraryTilingBox
-import com.maxrave.simpmusic.ui.navigation.destination.home.AnalyticsDestination
+
 import com.maxrave.simpmusic.ui.theme.transparent
 import com.maxrave.simpmusic.ui.theme.typo
 import com.maxrave.simpmusic.viewModel.LibraryViewModel
@@ -88,28 +88,28 @@ import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.baseline_people_alt_24
-import simpmusic.composeapp.generated.resources.chart
-import simpmusic.composeapp.generated.resources.create
-import simpmusic.composeapp.generated.resources.downloaded_playlists
-import simpmusic.composeapp.generated.resources.favorite_playlists
-import simpmusic.composeapp.generated.resources.favorite_podcasts
-import simpmusic.composeapp.generated.resources.library
-import simpmusic.composeapp.generated.resources.mix_for_you
-import simpmusic.composeapp.generated.resources.no_YouTube_playlists
-import simpmusic.composeapp.generated.resources.no_charts_found
-import simpmusic.composeapp.generated.resources.no_favorite_playlists
-import simpmusic.composeapp.generated.resources.no_favorite_podcasts
-import simpmusic.composeapp.generated.resources.no_mixes_found
-import simpmusic.composeapp.generated.resources.no_playlists_added
-import simpmusic.composeapp.generated.resources.no_playlists_downloaded
-import simpmusic.composeapp.generated.resources.playlist_name
-import simpmusic.composeapp.generated.resources.playlist_name_cannot_be_empty
-import simpmusic.composeapp.generated.resources.simpmusic_charts
-import simpmusic.composeapp.generated.resources.your_library
-import simpmusic.composeapp.generated.resources.your_playlists
-import simpmusic.composeapp.generated.resources.your_youtube_playlists
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.baseline_people_alt_24
+
+import tridermusic.composeapp.generated.resources.create
+import tridermusic.composeapp.generated.resources.downloaded_playlists
+import tridermusic.composeapp.generated.resources.favorite_playlists
+import tridermusic.composeapp.generated.resources.favorite_podcasts
+import tridermusic.composeapp.generated.resources.library
+import tridermusic.composeapp.generated.resources.mix_for_you
+import tridermusic.composeapp.generated.resources.no_YouTube_playlists
+
+import tridermusic.composeapp.generated.resources.no_favorite_playlists
+import tridermusic.composeapp.generated.resources.no_favorite_podcasts
+import tridermusic.composeapp.generated.resources.no_mixes_found
+import tridermusic.composeapp.generated.resources.no_playlists_added
+import tridermusic.composeapp.generated.resources.no_playlists_downloaded
+import tridermusic.composeapp.generated.resources.playlist_name
+import tridermusic.composeapp.generated.resources.playlist_name_cannot_be_empty
+
+import tridermusic.composeapp.generated.resources.your_library
+import tridermusic.composeapp.generated.resources.your_playlists
+import tridermusic.composeapp.generated.resources.your_youtube_playlists
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalHazeMaterialsApi::class)
 @Composable
@@ -130,7 +130,7 @@ fun LibraryScreen(
     val favoritePlaylist by viewModel.favoritePlaylist.collectAsStateWithLifecycle()
     val downloadedPlaylist by viewModel.downloadedPlaylist.collectAsStateWithLifecycle()
     val favoritePodcasts by viewModel.favoritePodcasts.collectAsStateWithLifecycle()
-    val chartPlaylists by viewModel.chartPlaylists.collectAsStateWithLifecycle()
+
     val recentlyAdded by viewModel.recentlyAdded.collectAsStateWithLifecycle()
     val accountThumbnail by viewModel.accountThumbnail.collectAsStateWithLifecycle()
     val hazeState =
@@ -186,11 +186,7 @@ fun LibraryScreen(
                 viewModel.getFavoritePodcasts()
             }
 
-            LibraryChipType.CHART -> {
-                if (chartPlaylists.data.isNullOrEmpty()) {
-                    viewModel.getChartPlaylists()
-                }
-            }
+
         }
     }
 
@@ -332,17 +328,7 @@ fun LibraryScreen(
                 }
             }
 
-            LibraryChipType.CHART -> {
-                GridLibraryPlaylist(
-                    navController,
-                    innerPadding.copy(top = topAppBarHeight),
-                    chartPlaylists,
-                    emptyText = Res.string.no_charts_found,
-                    onScrolling = onScrolling,
-                ) {
-                    viewModel.getChartPlaylists()
-                }
-            }
+
         }
     }
     val coroutineScope = rememberCoroutineScope()
@@ -444,25 +430,7 @@ fun LibraryScreen(
                 TopAppBarDefaults.topAppBarColors(
                     containerColor = Color.Transparent,
                 ),
-            actions = {
-                IconButton(
-                    onClick = {
-                        navController.navigate(AnalyticsDestination)
-                    },
-                ) {
-                    Box {
-                        Icon(Icons.Rounded.AutoGraph, "Analytics", tint = Color.White)
-                        Text(
-                            "NEW",
-                            Modifier.align(Alignment.BottomEnd),
-                            style =
-                                typo().bodySmall.copy(
-                                    fontSize = 5.sp,
-                                ),
-                        )
-                    }
-                }
-            },
+
             navigationIcon = {
                 AnimatedVisibility(
                     !accountThumbnail.isNullOrEmpty(),
@@ -513,7 +481,7 @@ fun LibraryScreen(
                             LibraryChipType.FAVORITE_PLAYLIST -> stringResource(Res.string.favorite_playlists)
                             LibraryChipType.DOWNLOADED_PLAYLIST -> stringResource(Res.string.downloaded_playlists)
                             LibraryChipType.FAVORITE_PODCAST -> stringResource(Res.string.favorite_podcasts)
-                            LibraryChipType.CHART -> stringResource(Res.string.simpmusic_charts)
+
                         },
                 ) {
                     viewModel.setCurrentScreen(type)

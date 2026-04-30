@@ -17,8 +17,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.playlist
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.playlist
 
 class LibraryDynamicPlaylistViewModel(
     private val songRepository: SongRepository,

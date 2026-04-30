@@ -30,9 +30,9 @@ import coil3.request.crossfade
 import com.maxrave.domain.data.model.podcast.PodcastBrowse
 import com.maxrave.simpmusic.ui.theme.typo
 import org.jetbrains.compose.resources.painterResource
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.baseline_more_vert_24
-import simpmusic.composeapp.generated.resources.holder
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.baseline_more_vert_24
+import tridermusic.composeapp.generated.resources.holder
 
 @Composable
 fun PodcastEpisodeFullWidthItem(

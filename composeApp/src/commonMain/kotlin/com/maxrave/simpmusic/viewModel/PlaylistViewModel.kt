@@ -44,19 +44,19 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.koin.core.component.inject
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.auto_created_by_youtube_music
-import simpmusic.composeapp.generated.resources.downloading
-import simpmusic.composeapp.generated.resources.error
-import simpmusic.composeapp.generated.resources.playlist
-import simpmusic.composeapp.generated.resources.playlist_is_empty
-import simpmusic.composeapp.generated.resources.radio
-import simpmusic.composeapp.generated.resources.radio_not_available
-import simpmusic.composeapp.generated.resources.shuffle
-import simpmusic.composeapp.generated.resources.shuffle_not_available
-import simpmusic.composeapp.generated.resources.synced
-import simpmusic.composeapp.generated.resources.syncing
-import simpmusic.composeapp.generated.resources.view_count
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.auto_created_by_youtube_music
+import tridermusic.composeapp.generated.resources.downloading
+import tridermusic.composeapp.generated.resources.error
+import tridermusic.composeapp.generated.resources.playlist
+import tridermusic.composeapp.generated.resources.playlist_is_empty
+import tridermusic.composeapp.generated.resources.radio
+import tridermusic.composeapp.generated.resources.radio_not_available
+import tridermusic.composeapp.generated.resources.shuffle
+import tridermusic.composeapp.generated.resources.shuffle_not_available
+import tridermusic.composeapp.generated.resources.synced
+import tridermusic.composeapp.generated.resources.syncing
+import tridermusic.composeapp.generated.resources.view_count
 
 class PlaylistViewModel(
     private val songRepository: SongRepository,

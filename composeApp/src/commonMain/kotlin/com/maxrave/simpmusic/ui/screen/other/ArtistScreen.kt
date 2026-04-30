@@ -86,21 +86,21 @@ import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.albums
-import simpmusic.composeapp.generated.resources.description
-import simpmusic.composeapp.generated.resources.error
-import simpmusic.composeapp.generated.resources.featured_inArtist
-import simpmusic.composeapp.generated.resources.follow
-import simpmusic.composeapp.generated.resources.followed
-import simpmusic.composeapp.generated.resources.more
-import simpmusic.composeapp.generated.resources.no_description
-import simpmusic.composeapp.generated.resources.popular
-import simpmusic.composeapp.generated.resources.related_artists
-import simpmusic.composeapp.generated.resources.singles
-import simpmusic.composeapp.generated.resources.start_radio
-import simpmusic.composeapp.generated.resources.unknown
-import simpmusic.composeapp.generated.resources.videos
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.albums
+import tridermusic.composeapp.generated.resources.description
+import tridermusic.composeapp.generated.resources.error
+import tridermusic.composeapp.generated.resources.featured_inArtist
+import tridermusic.composeapp.generated.resources.follow
+import tridermusic.composeapp.generated.resources.followed
+import tridermusic.composeapp.generated.resources.more
+import tridermusic.composeapp.generated.resources.no_description
+import tridermusic.composeapp.generated.resources.popular
+import tridermusic.composeapp.generated.resources.related_artists
+import tridermusic.composeapp.generated.resources.singles
+import tridermusic.composeapp.generated.resources.start_radio
+import tridermusic.composeapp.generated.resources.unknown
+import tridermusic.composeapp.generated.resources.videos
 
 @Composable
 @ExperimentalMaterial3Api

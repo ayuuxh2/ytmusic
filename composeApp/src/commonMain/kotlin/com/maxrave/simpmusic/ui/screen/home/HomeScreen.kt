@@ -147,41 +147,41 @@ import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.all
-import simpmusic.composeapp.generated.resources.app_name
-import simpmusic.composeapp.generated.resources.baseline_history_24
-import simpmusic.composeapp.generated.resources.baseline_settings_24
-import simpmusic.composeapp.generated.resources.cancel
-import simpmusic.composeapp.generated.resources.chart
-import simpmusic.composeapp.generated.resources.commute
-import simpmusic.composeapp.generated.resources.do_not_show_again
-import simpmusic.composeapp.generated.resources.energize
-import simpmusic.composeapp.generated.resources.feel_good
-import simpmusic.composeapp.generated.resources.focus
-import simpmusic.composeapp.generated.resources.genre
-import simpmusic.composeapp.generated.resources.go_to_log_in_page
-import simpmusic.composeapp.generated.resources.good_afternoon
-import simpmusic.composeapp.generated.resources.good_evening
-import simpmusic.composeapp.generated.resources.good_morning
-import simpmusic.composeapp.generated.resources.good_night
-import simpmusic.composeapp.generated.resources.holder
-import simpmusic.composeapp.generated.resources.let_s_pick_a_playlist_for_you
-import simpmusic.composeapp.generated.resources.let_s_start_with_a_radio
-import simpmusic.composeapp.generated.resources.log_in_warning
-import simpmusic.composeapp.generated.resources.moods_amp_moment
-import simpmusic.composeapp.generated.resources.outline_notifications_24
-import simpmusic.composeapp.generated.resources.party
-import simpmusic.composeapp.generated.resources.quick_picks
-import simpmusic.composeapp.generated.resources.relax
-import simpmusic.composeapp.generated.resources.romance
-import simpmusic.composeapp.generated.resources.sad
-import simpmusic.composeapp.generated.resources.sleep
-import simpmusic.composeapp.generated.resources.top_artists
-import simpmusic.composeapp.generated.resources.warning
-import simpmusic.composeapp.generated.resources.welcome_back
-import simpmusic.composeapp.generated.resources.what_is_best_choice_today
-import simpmusic.composeapp.generated.resources.workout
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.all
+import tridermusic.composeapp.generated.resources.app_name
+import tridermusic.composeapp.generated.resources.baseline_history_24
+import tridermusic.composeapp.generated.resources.baseline_settings_24
+import tridermusic.composeapp.generated.resources.cancel
+import tridermusic.composeapp.generated.resources.chart
+import tridermusic.composeapp.generated.resources.commute
+import tridermusic.composeapp.generated.resources.do_not_show_again
+import tridermusic.composeapp.generated.resources.energize
+import tridermusic.composeapp.generated.resources.feel_good
+import tridermusic.composeapp.generated.resources.focus
+import tridermusic.composeapp.generated.resources.genre
+import tridermusic.composeapp.generated.resources.go_to_log_in_page
+import tridermusic.composeapp.generated.resources.good_afternoon
+import tridermusic.composeapp.generated.resources.good_evening
+import tridermusic.composeapp.generated.resources.good_morning
+import tridermusic.composeapp.generated.resources.good_night
+import tridermusic.composeapp.generated.resources.holder
+import tridermusic.composeapp.generated.resources.let_s_pick_a_playlist_for_you
+import tridermusic.composeapp.generated.resources.let_s_start_with_a_radio
+import tridermusic.composeapp.generated.resources.log_in_warning
+import tridermusic.composeapp.generated.resources.moods_amp_moment
+import tridermusic.composeapp.generated.resources.outline_notifications_24
+import tridermusic.composeapp.generated.resources.party
+import tridermusic.composeapp.generated.resources.quick_picks
+import tridermusic.composeapp.generated.resources.relax
+import tridermusic.composeapp.generated.resources.romance
+import tridermusic.composeapp.generated.resources.sad
+import tridermusic.composeapp.generated.resources.sleep
+import tridermusic.composeapp.generated.resources.top_artists
+import tridermusic.composeapp.generated.resources.warning
+import tridermusic.composeapp.generated.resources.welcome_back
+import tridermusic.composeapp.generated.resources.what_is_best_choice_today
+import tridermusic.composeapp.generated.resources.workout
 
 private val listOfHomeChip =
     listOf(
@@ -627,59 +627,7 @@ fun HomeScreen(
                                     }
                                 }
                             }
-                            item {
-                                Column(
-                                    Modifier
-                                        .padding(vertical = 10.dp)
-                                        .padding(horizontal = 15.dp),
-                                    verticalArrangement = Arrangement.SpaceBetween,
-                                ) {
-                                    ChartTitle()
-                                    Spacer(modifier = Modifier.height(5.dp))
-                                    Crossfade(targetState = regionChart) {
-                                        Logger.w("HomeScreen", "regionChart: $it")
-                                        if (it != null) {
-                                            DropdownButton(
-                                                items = CHART_SUPPORTED_COUNTRY.itemsData.toList(),
-                                                defaultSelected =
-                                                    CHART_SUPPORTED_COUNTRY.itemsData.getOrNull(
-                                                        CHART_SUPPORTED_COUNTRY.items.indexOf(it),
-                                                    )
-                                                        ?: CHART_SUPPORTED_COUNTRY.itemsData[1],
-                                            ) {
-                                                viewModel.exploreChart(
-                                                    CHART_SUPPORTED_COUNTRY.items[
-                                                        CHART_SUPPORTED_COUNTRY.itemsData.indexOf(
-                                                            it,
-                                                        ),
-                                                    ],
-                                                )
-                                            }
-                                        }
-                                    }
-                                    Spacer(modifier = Modifier.height(5.dp))
-                                    Crossfade(
-                                        targetState = chartLoading,
-                                        label = "Chart",
-                                    ) { loading ->
-                                        if (!loading) {
-                                            chart?.let {
-                                                ChartData(
-                                                    chart = it,
-                                                    navController = navController,
-                                                )
-                                            }
-                                        } else {
-                                            CenterLoadingBox(
-                                                modifier =
-                                                    Modifier
-                                                        .fillMaxWidth()
-                                                        .height(400.dp),
-                                            )
-                                        }
-                                    }
-                                }
-                            }
+
                         }
                         item {
                             EndOfPage()

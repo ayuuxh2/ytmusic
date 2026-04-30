@@ -71,10 +71,10 @@ import com.maxrave.simpmusic.ui.theme.typo
 import com.maxrave.simpmusic.viewModel.NowPlayingScreenData
 import com.maxrave.simpmusic.viewModel.UIEvent
 import org.jetbrains.compose.resources.painterResource
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.baseline_skip_next_24
-import simpmusic.composeapp.generated.resources.baseline_skip_previous_24
-import simpmusic.composeapp.generated.resources.holder
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.baseline_skip_next_24
+import tridermusic.composeapp.generated.resources.baseline_skip_previous_24
+import tridermusic.composeapp.generated.resources.holder
 
 @Composable
 private fun MiniPlayerSeekBar(

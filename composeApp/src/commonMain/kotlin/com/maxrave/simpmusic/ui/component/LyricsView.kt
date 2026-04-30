@@ -117,10 +117,10 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
-import simpmusic.composeapp.generated.resources.Res
-import simpmusic.composeapp.generated.resources.baseline_more_vert_24
-import simpmusic.composeapp.generated.resources.crossfading
-import simpmusic.composeapp.generated.resources.unavailable
+import tridermusic.composeapp.generated.resources.Res
+import tridermusic.composeapp.generated.resources.baseline_more_vert_24
+import tridermusic.composeapp.generated.resources.crossfading
+import tridermusic.composeapp.generated.resources.unavailable
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.cos
