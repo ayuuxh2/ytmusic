@@ -42,7 +42,7 @@ data class YouTubeClient(
         private const val REFERER_YOUTUBE_MUSIC = "https://music.youtube.com/"
 
         const val USER_AGENT_WEB =
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
         private const val USER_AGENT_ANDROID =
             "com.google.android.apps.youtube.music/7.35.50 (Linux; U; Android 12) gzip"
         private const val USER_AGENT_IOS = "com.google.ios.youtube/19.50.4 (iPhone16,2; U; CPU iOS 18_1_0 like Mac OS X;)"
@@ -71,7 +71,7 @@ data class YouTubeClient(
         val WEB =
             YouTubeClient(
                 clientName = "WEB",
-                clientVersion = "2.20250312.04.00",
+                clientVersion = "2.20260531.05.00",
                 api_key = "AIzaSyC9XL3ZjWddXya6X74dJoCTL-WEYFDNX3",
                 userAgent = USER_AGENT_WEB,
             )
@@ -79,7 +79,7 @@ data class YouTubeClient(
         val WEB_REMIX =
             YouTubeClient(
                 clientName = "WEB_REMIX",
-                clientVersion = "1.20260304.03.00",
+                clientVersion = "1.20260531.05.00",
                 api_key = "AIzaSyC9XL3ZjWddXya6X74dJoCTL-WEYFDNX30",
                 userAgent = USER_AGENT_WEB,
                 referer = REFERER_YOUTUBE_MUSIC,
@@ -88,7 +88,7 @@ data class YouTubeClient(
         val WEB_EMBEDDED =
             YouTubeClient(
                 clientName = "WEB_EMBEDDED_PLAYER",
-                clientVersion = "1.20250310.01.00",
+                clientVersion = "1.20260531.05.00",
                 api_key = "AIzaSyC9XL3ZjWddXya6X74dJoCTL-WEYFDNX30",
                 userAgent = USER_AGENT_WEB,
                 referer = REFERER_YOUTUBE_MUSIC,
@@ -105,7 +105,7 @@ data class YouTubeClient(
         val TVHTML5 =
             YouTubeClient(
                 clientName = "TVHTML5",
-                clientVersion = "7.20250312.16.00",
+                clientVersion = "7.20260531.05.00",
                 api_key = "AIzaSyDCU8hByM-4DrUqRUYnGn-3llEO78bcxq8",
                 userAgent = "Mozilla/5.0 (ChromiumStylePlatform) Cobalt/Version",
             )
@@ -128,7 +128,7 @@ data class YouTubeClient(
         val MWEB =
             YouTubeClient(
                 clientName = "MWEB",
-                clientVersion = "2.20241202.07.00",
+                clientVersion = "2.20260531.05.00",
                 api_key = "AIzaSyC9XL3ZjWddXya6X74dJoCTL-WEYFDNX3",
                 userAgent = USER_AGENT_MWEB,
                 timeZone = "UTC",
